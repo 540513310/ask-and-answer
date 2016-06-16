@@ -1,4 +1,17 @@
-﻿body{
+﻿/*更改jquery ui中button正常状态的背景*/
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+	background: url(../img/ui_header_bg.png);
+}
+/*更改jquery ui中对话框的header的背景颜色*/
+.ui-widget-header {
+	background:url(../img/ui_header_bg.png);
+}
+
+/*更改对话框内button的点击时的背景颜色*/
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+	background:url(../img/ui_white.png);
+}
+body{
 	font-size: 12px;
 	padding: 0;
 	margin: 40px 0 0 0;
@@ -60,4 +73,24 @@
 	text-decoration: none;
 	font-size: 14px;
 	color: #555;	
+}
+
+#reg p .star{
+	color: red;
+	font-size: 14px;
+}
+
+#reg p label{
+	color: #666;
+	font-size: 14px;
+}
+#reg .text{
+	border-radius: 4px;
+	border:1px solid #ccc;
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #fff;
+	font-size: 13px;
+	color: #ccc;
 }
