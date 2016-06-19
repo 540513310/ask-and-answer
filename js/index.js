@@ -39,7 +39,7 @@
 			host=''	,							//邮箱的域名
 			result=[],							//最终的邮箱列表
 			ix=userTypeIn.indexOf('@');			//输入的@所在的位置，如果输入中包含@则得到@所在的索引，否则得到-1
-			result.push(userTypeIn);
+			//result.push(userTypeIn);
 			//当有@时，重新分配用户名和域名
 			if(ix>-1){
 				 name=userTypeIn.slice(0,ix);	//@符号之前的为邮箱中的用户名
@@ -56,10 +56,11 @@
 			    var host_list=$.map(host_grep,function (value,index) {
 			    	return name+'@'+value;
 			    });
-			    result=result.concat(host_list);
+			    //result=result.concat(host_list);
 			}
 			
-			response(result);
+			//response(result);
+			response(host_list);
 		},
 	});
 })
