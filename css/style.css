@@ -79,7 +79,12 @@ body{
 	color: red;
 	font-size: 14px;
 }
-
+/*当验证成功时给span添加打勾的背景图片*/
+.succ{
+	width: 20px;
+	display: inline-block;
+	background: url(../img/reg_succ.png) no-repeat;
+}
 #reg p label{
 	color: #666;
 	font-size: 14px;

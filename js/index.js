@@ -107,6 +107,17 @@
 			}
 			this.defaultShowErrors();
 		},
+		//设置当验证出错时input的边框高光
+		highlight:function(element,errorClass){
+			$(element).css('border','1px solid #630');
+		},
+		//当验证正确时，去掉input边框的高光
+		unhighlight:function(element,errorClass){
+			$(element).css('border','1px solid #ccc');   
+			//验证成功时，在input后面加入打勾的图片
+			$(element).parent().find('span').html('&nbsp;').addClass('succ');
+		},
+
 		//群组错误提示
 		errorLabelContainer:'ol.reg_error',
 		//把错误提示包裹在li标签中
