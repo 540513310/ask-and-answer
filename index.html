@@ -3,9 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>知问前端</title>
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.ui.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+
 <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
 <link rel="stylesheet" href="css/smoothness/jquery.ui.css" type="text/css" />
 <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -26,20 +29,21 @@
 			</div>
 		</div>
 	</div>
-	<div id="reg" title="会员注册">
+	<form id="reg" action="123.html" title="会员注册">
+		<ol class="reg_error"></ol>
 		<p>
 			<label for="user">帐号：</label>
-			<input type="text" name="user" class="text" id="user" title="请输入帐号，不少于2位！" />
+			<input type="text" name="user" class="text" id="user"  />
 			<span class="star">*</span>
 		</p>
 		<p>
 			<label for="pass">密码：</label>
-			<input type="password" name="pass" class="text" id="pass" title="请输入密码，不少于6位！" />
+			<input type="password" name="pass" class="text" id="pass"  />
 			<span class="star">*</span>
 		</p>
 		<p>
 			<label for="email">邮箱：</label>
-			<input type="text" name="email" id="email" class="text"  title="请输入正确的邮箱！" />
+			<input type="text" name="email" id="email" class="text"   />
 			<span class="star">*</span>
 		</p>
 		<p>
@@ -50,7 +54,7 @@
 			<label for="date">生日：</label>
 			<input type="text" name="date" readonly="readonly" class="text" id="date" />
 		</p>
-    </div>
+    </form>
 		
 
 	

@@ -10,8 +10,14 @@
 
 	$("#reg").dialog({
 		autoOpen:false,
+		modal:true,
+		resizable:false,
+		width:320,
+		height:340,
 		buttons:{
-			'提交':function(){}
+			'提交':function(){
+				$(this).submit();
+			}
 		}
 	});
 
@@ -20,17 +26,19 @@
 	});
 
 	$('#reg').buttonset();
-	$('#reg input[title]').tooltip({
-		position:{
-			my:'left',
-			at:'right'
-		}
 
-		});
+	//工具提示
+	// $('#reg input[title]').tooltip({
+	// 	position:{
+	// 		my:'left',
+	// 		at:'right'
+	// 	}
+
+	// 	});
 
 	$('#date').datepicker({
 		dateFormat:'yy-mm-dd',
-		dateNamesMin:['日','一','二','三','四','五','六'],
+		dayNamesMin:['日','一','二','三','四','五','六'],
 		monthNames:['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一','十二'],
 		monthNamesShort:['一','二','三','四','五','六','七','八','九','十','十一','十二'],
 
@@ -47,6 +55,8 @@
 		yearRange : '1950:2020',
 
 	});
+
+	$('#date').datepicker('setDate','2016-6-20');
 
 	$('#email').autocomplete({
 		delay:0,
@@ -80,6 +90,62 @@
 			
 			//response(result);
 			response(host_list);
+		},
+	});
+
+
+	//验证插件的使用
+	$('#reg').validate({
+		
+		showErrors:function(errorMap,errorList){
+			var errors=this.numberOfInvalids();
+			if(errors>0){
+				$('#reg').dialog('option','height',errors*20+340);
+			}
+			else{
+			 	$('#reg').dialog('option','height',340);
+			}
+			this.defaultShowErrors();
+		},
+		//群组错误提示
+		errorLabelContainer:'ol.reg_error',
+		//把错误提示包裹在li标签中
+		wrapper:'li',
+		//根据错误提示的条数动态修改窗体的高度
+		rules:{
+			user:{
+				required:true,
+				minlength:2,
+			},
+			pass:{
+				required:true,
+				minlength:6
+			},
+			email:{
+				required:true,
+				email:true
+			},
+			date:{
+				date:true
+			}
+		},
+
+		messages:{
+			user:{
+				required:'账号不得为空',
+				minlength:jQuery.format('账号不得小于{0}位！'),
+			},
+			pass:{
+				required:'密码不得为空',
+				minlength:'密码不得小于6位'
+			},
+			email:{
+				required:'邮箱不得为空',
+				email:'请输入正确的邮箱',
+			},
+			date:{
+				date:'请输入正确的日期',
+			}
 		},
 	});
 })

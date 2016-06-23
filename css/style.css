@@ -94,3 +94,12 @@ body{
 	font-size: 13px;
 	color: #ccc;
 }
+
+#reg ol{
+	padding:0 0 0 20px;
+	margin:0;
+}
+#reg ol li{
+	height: 20px;
+	color: red;
+}
