@@ -81,7 +81,7 @@ body{
 }
 /*当验证成功时给span添加打勾的背景图片*/
 .succ{
-	width: 20px;
+	width:15px;
 	display: inline-block;
 	background: url(../img/reg_succ.png) no-repeat;
 }

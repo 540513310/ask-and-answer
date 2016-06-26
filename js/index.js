@@ -25,6 +25,7 @@
 		$("#reg").dialog('open');
 	});
 
+	//设置表单中的所有的radio外观为按钮形式
 	$('#reg').buttonset();
 
 	//工具提示
@@ -56,8 +57,10 @@
 
 	});
 
+	//设置默认时间
 	$('#date').datepicker('setDate','2016-6-20');
 
+	//邮箱自动补全功能
 	$('#email').autocomplete({
 		delay:0,
 		source:function (request,response) {
@@ -96,7 +99,11 @@
 
 	//验证插件的使用
 	$('#reg').validate({
-		
+		// submitHander中的方法只有在验证成功时才会执行，且会阻止默认提交跳转
+		submitHandler:function(form){
+
+		},
+		//当出现错误提示时，会自动调整dialog的高度，
 		showErrors:function(errorMap,errorList){
 			var errors=this.numberOfInvalids();
 			if(errors>0){
@@ -159,4 +166,6 @@
 			}
 		},
 	});
+	//用Ajax提交表单的插件form
+	
 })
